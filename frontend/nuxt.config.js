@@ -35,6 +35,7 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/vuetify',
   ],
   /*
   ** Nuxt.js modules
@@ -46,7 +47,6 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     'cookie-universal-nuxt',
-    'nuxt-buefy',
   ],
   /*
   ** Axios module configuration
@@ -66,8 +66,12 @@ export default {
     extend (config, ctx) {
     }
   },
+  /* layoutTransition: {
+    name: 'dissolve',
+    mode: 'out-in'
+  },
   pageTransition: {
     name: 'fade',
     mode: 'out-in'
-  }
+  } */
 }

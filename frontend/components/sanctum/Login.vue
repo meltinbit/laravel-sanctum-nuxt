@@ -1,42 +1,59 @@
 <template>
-  <div class="login-container">
-    <div class="login">
-      <b-field label="Email">
-          <b-input 
-            rounded
-            size="is-medium"
-            v-model="form.email"
-            icon="email"
-            type="email"
-            value="john@"
-            maxlength="30">
-          </b-input>
-      </b-field>
-      <b-field label="Password">
-        <b-input 
-          rounded
-          size="is-medium"
-          v-model="form.password"
-          type="password"
-          value="iwantmytreasure"
-          password-reveal>
-        </b-input>
-      </b-field>
-      <br>
-      <b-notification v-if="errors" type="is-danger">
-          {{ errors.email[0] }}
-      </b-notification>
-      <b-button 
-        @click="pressed" 
-        type="is-primary" 
-        rounded 
-        expanded
-        size="is-medium"
+  <v-container
+    fluid
+    fill-height
+  >
+    <v-row
+      align-content="center"
+      justify="center"
+    >
+      <v-col
+        align-self="center"
+        cols="12"
+        sm="8"
+        md="4"
+      >
+      <v-card class="elevation-12">
+        <v-toolbar
+          color="red"
+          dark
+          flat
         >
-        LOGIN
-      </b-button>
-    </div>
-  </div>
+          <v-toolbar-title>Login form</v-toolbar-title>
+        </v-toolbar>
+        <v-card-text>
+          <v-form>
+            <v-text-field
+              label="Login"
+              name="login"
+              prepend-icon="mdi-account"
+              type="text"
+              v-model="form.email"
+              color="red"
+            ></v-text-field>
+
+            <v-text-field
+              id="password"
+              label="Password"
+              name="password"
+              prepend-icon="mdi-lock"
+              type="password"
+              v-model="form.password"
+              color="red"
+            ></v-text-field>
+          </v-form>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="red" text @click="pressed">LOGIN</v-btn>
+        </v-card-actions>
+      </v-card>
+      <v-alert v-if="errors" type="warning" class="mt-5">
+        {{ errors.email[0] }}
+      </v-alert>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

@@ -1,12 +1,16 @@
 <template>
-  <section v-if="user" class="hero is-primary">
-    <div class="hero-body">
-      <div class="container">
-          <h1 class="title">Welcome</h1> 
-          <h2 class="subtitle">{{ user.name }} {{ user.email }}</h2 class="subtitle">
-      </div>
-    </div>
-  </section>
+  <v-container v-if="user" fluid>
+    <v-row>
+      <v-col
+        cols="12"
+        sm="8"
+        md="4"
+      >
+        <h1 class="title">Welcome</h1> 
+        <h2 class="subtitle-1">{{ user.name }} {{ user.email }}</h2>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

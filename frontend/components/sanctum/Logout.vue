@@ -1,17 +1,11 @@
 <template>
-  <a :class="className" @click="logout">logout</a>    
+  <v-icon @click="logout">mdi-logout</v-icon>
 </template>
 
 <script>
 import { mapMutations } from 'vuex'
 
 export default {
-  props: {
-    className: {
-      title:  'className',
-      type: String
-    }
-  },
   methods: {
     ...mapMutations({
       SET_LOGGEDOUT: 'auth/SET_LOGGEDOUT'
